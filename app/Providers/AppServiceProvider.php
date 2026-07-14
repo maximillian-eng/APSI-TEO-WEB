@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        if (App::environment('production')) {
+            URL::forceScheme('https');
+        }
+
         if (App::environment('production') && ! config('app.key')) {
             $key = 'base64:' . base64_encode(random_bytes(32));
             config(['app.key' => $key]);
