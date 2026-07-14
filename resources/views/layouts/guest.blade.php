@@ -79,11 +79,11 @@
         </div>
 
         {{-- Right form panel --}}
-        <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-amber-50">
+        <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-gray-900">
             <div class="w-full max-w-md">
                 {{-- Mobile logo --}}
                 <div class="lg:hidden flex items-center justify-center mb-8">
-                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-800 shadow-lg">
+                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-600 shadow-lg">
                         <svg class="w-7 h-7 text-amber-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
@@ -91,15 +91,15 @@
                 </div>
 
                 <div class="text-center mb-8">
-                    <h2 class="font-display text-3xl font-bold text-amber-900">Selamat Datang</h2>
-                    <p class="text-amber-700/70 mt-2">Masuk ke akun perpustakaan Anda</p>
+                    <h2 class="font-display text-3xl font-bold text-white">Selamat Datang</h2>
+                    <p class="text-gray-400 mt-2">Masuk ke akun perpustakaan Anda</p>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl border border-amber-100 p-8">
+                <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 p-8">
                     {{ $slot }}
                 </div>
 
-                <p class="text-center text-amber-600/50 text-xs mt-8">
+                <p class="text-center text-gray-500 text-xs mt-8">
                     &copy; {{ date('Y') }} Sistem Perpustakaan. Hak cipta dilindungi.
                 </p>
             </div>
