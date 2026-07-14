@@ -29,7 +29,7 @@
 <body class="font-body antialiased">
     <div class="min-h-screen flex">
         {{-- Left decorative panel --}}
-        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-amber-900 via-amber-800 to-amber-950 bookshelf-pattern">
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bookshelf-pattern" style="background: linear-gradient(to bottom right, #78350f, #92400e, #451a03);">
             {{-- Decorative floating books --}}
             <div class="absolute top-20 left-16 float-book">
                 <div class="w-16 h-22 bg-gradient-to-b from-rose-400 to-rose-600 rounded-sm shadow-lg transform rotate-6" style="height: 5.5rem;"></div>
@@ -55,8 +55,8 @@
                             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
-                    <h1 class="font-display text-4xl font-bold text-amber-50 mb-4">Perpustakaan</h1>
-                    <p class="text-amber-200/80 text-lg max-w-sm mx-auto leading-relaxed">
+                    <h1 class="font-display text-4xl font-bold mb-4" style="color: #fffbeb;">Perpustakaan</h1>
+                    <p class="text-lg max-w-sm mx-auto leading-relaxed" style="color: rgba(253, 230, 138, 0.8);">
                         Sistem manajemen perpustakaan digital untuk mengelola buku, peminjaman, dan anggota.
                     </p>
                 </div>
@@ -79,7 +79,7 @@
         </div>
 
         {{-- Right form panel --}}
-        <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-gray-900">
+        <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-12" style="background-color: #111827;">
             <div class="w-full max-w-md">
                 {{-- Mobile logo --}}
                 <div class="lg:hidden flex items-center justify-center mb-8">
@@ -91,11 +91,11 @@
                 </div>
 
                 <div class="text-center mb-8">
-                    <h2 class="font-display text-3xl font-bold text-white">Selamat Datang</h2>
-                    <p class="text-gray-400 mt-2">Masuk ke akun perpustakaan Anda</p>
+                    <h2 class="font-display text-3xl font-bold" style="color: #ffffff;">Selamat Datang</h2>
+                    <p class="mt-2" style="color: #9ca3af;">Masuk ke akun perpustakaan Anda</p>
                 </div>
 
-                <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 p-8">
+                <div class="rounded-2xl shadow-xl p-8" style="background-color: #1f2937; border: 1px solid #374151;">
                     {{ $slot }}
                 </div>
 
