@@ -1,4 +1,9 @@
 {
   "$schema": "https://schema.railpack.com",
-  "provider": "php"
+  "provider": "php",
+  "deploy": {
+    "variables": {
+      "RAILPACK_SKIP_MIGRATIONS": "true"
+    }
+  }
 }

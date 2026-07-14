@@ -10,7 +10,6 @@
         "ext-bcmath": "*",
         "ext-gd": "*",
         "ext-mbstring": "*",
-        "ext-pdo_mysql": "*",
         "ext-zip": "*",
         "laravel/framework": "^13.8",
         "laravel/tinker": "^3.0"
