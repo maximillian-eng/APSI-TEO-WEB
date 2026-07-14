@@ -79,7 +79,7 @@
         </div>
 
         {{-- Right form panel --}}
-        <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-gray-50 dark:bg-gray-900">
+        <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 bg-amber-50">
             <div class="w-full max-w-md">
                 {{-- Mobile logo --}}
                 <div class="lg:hidden flex items-center justify-center mb-8">
@@ -91,15 +91,15 @@
                 </div>
 
                 <div class="text-center mb-8">
-                    <h2 class="font-display text-3xl font-bold text-gray-900 dark:text-white">Selamat Datang</h2>
-                    <p class="text-gray-500 dark:text-gray-400 mt-2">Masuk ke akun perpustakaan Anda</p>
+                    <h2 class="font-display text-3xl font-bold text-amber-900">Selamat Datang</h2>
+                    <p class="text-amber-700/70 mt-2">Masuk ke akun perpustakaan Anda</p>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700/50 p-8">
+                <div class="bg-white rounded-2xl shadow-xl border border-amber-100 p-8">
                     {{ $slot }}
                 </div>
 
-                <p class="text-center text-gray-400 dark:text-gray-500 text-xs mt-8">
+                <p class="text-center text-amber-600/50 text-xs mt-8">
                     &copy; {{ date('Y') }} Sistem Perpustakaan. Hak cipta dilindungi.
                 </p>
             </div>
