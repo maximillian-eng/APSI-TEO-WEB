@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php84", "php84Packages.composer", "nodejs_18", "npm-9_x"]
+nixPkgs = ["php84", "php84Packages.composer", "php84Extensions.zip", "php84Extensions.gd", "php84Extensions.mbstring", "php84Extensions.pdo_mysql", "php84Extensions.bcmath", "php84Extensions.exif", "php84Extensions.pcntl", "unzip", "nodejs_18", "npm-9_x"]
 
 [phases.install]
 cmds = ["composer install --ignore-platform-reqs", "npm ci"]
