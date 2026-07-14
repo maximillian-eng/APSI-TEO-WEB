@@ -31,7 +31,7 @@ class MemberRiwayatController extends Controller
     {
         $transaksi->load('buku');
 
-        $hariTelat = max(0, now()->diffInDays($transaksi->tanggal_jatuh_tempo, false));
+        $hariTelat = max(0, $transaksi->tanggal_jatuh_tempo->diffInDays(now(), false));
         $dendaKeterlambatan = $hariTelat * 1000;
 
         return view('member.riwayat.pengembalian', compact('transaksi', 'hariTelat', 'dendaKeterlambatan'));
@@ -43,7 +43,7 @@ class MemberRiwayatController extends Controller
             'kondisi_buku' => 'required|in:Bagus,Rusak Ringan,Rusak Berat',
         ]);
 
-        $hariTelat = max(0, now()->diffInDays($transaksi->tanggal_jatuh_tempo, false));
+        $hariTelat = max(0, $transaksi->tanggal_jatuh_tempo->diffInDays(now(), false));
         $dendaKeterlambatan = $hariTelat * 1000;
         $dendaKerusakan = match ($validated['kondisi_buku']) {
             'Bagus' => 0,

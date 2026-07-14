@@ -7,10 +7,10 @@
     <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <form method="GET" class="flex-1 flex gap-2">
             <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari judul, ISBN, pengarang..."
-                   class="flex-1 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm">
+                   class="flex-1 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-sm">
             <button type="submit" class="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 text-sm">Cari</button>
         </form>
-        <a href="{{ route('admin.buku.create') }}" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-sm font-medium text-center">
+        <a href="{{ route('admin.buku.create') }}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 text-sm font-medium text-center">
             + Tambah Buku
         </a>
     </div>
@@ -39,8 +39,8 @@
                         </span>
                     </td>
                     <td class="px-6 py-4 text-right space-x-2">
-                        <a href="{{ route('admin.buku.status', $buku) }}" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 text-xs">Status</a>
-                        <a href="{{ route('admin.buku.edit', $buku) }}" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 text-xs">Edit</a>
+                        <a href="{{ route('admin.buku.status', $buku) }}" class="text-purple-600 hover:text-purple-800 dark:text-purple-400 text-xs">Status</a>
+                        <a href="{{ route('admin.buku.edit', $buku) }}" class="text-purple-600 hover:text-purple-800 dark:text-purple-400 text-xs">Edit</a>
                         <form method="POST" action="{{ route('admin.buku.destroy', $buku) }}" class="inline" x-data
                               x-on:submit.prevent="if(confirm('Apakah Anda yakin ingin menghapus buku ini?')) $el.submit()">
                             @csrf @method('DELETE')

@@ -10,8 +10,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .font-display { font-family: 'Playfair Display', serif; }
-        .sidebar-gradient { background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%); }
-        .sidebar-gradient-light { background: linear-gradient(180deg, #312e81 0%, #4338ca 50%, #312e81 100%); }
+        .sidebar-gradient { background: linear-gradient(180deg, #581c87 0%, #7e22ce 50%, #581c87 100%); }
+        .sidebar-gradient-light { background: linear-gradient(180deg, #7e22ce 0%, #9333ea 50%, #7e22ce 100%); }
     </style>
 </head>
 <body class="font-sans antialiased bg-slate-50">
@@ -24,7 +24,7 @@
         <aside :class="open ? 'translate-x-0' : '-translate-x-full'"
                class="fixed inset-y-0 left-0 z-50 w-72 sidebar-gradient transform transition-transform duration-300 ease-out lg:translate-x-0 lg:static lg:z-auto flex flex-col">
             {{-- Brand --}}
-            <div class="flex items-center gap-3 h-16 px-6 border-b border-indigo-500/20">
+                <div class="flex items-center gap-3 h-16 px-6 border-b border-purple-500/20">
                 <div class="w-9 h-9 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/30">
                     <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
@@ -32,9 +32,9 @@
                 </div>
                 <div>
                     <span class="font-display text-white font-bold text-lg leading-none block">Perpustakaan</span>
-                    <span class="text-indigo-300/60 text-[10px] uppercase tracking-widest font-semibold">Admin Panel</span>
+                    <span class="text-purple-300/60 text-[10px] uppercase tracking-widest font-semibold">Admin Panel</span>
                 </div>
-                <button @click="open = false" class="lg:hidden ml-auto text-indigo-300 hover:text-white">
+                <button @click="open = false" class="lg:hidden ml-auto text-purple-300 hover:text-white">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
@@ -51,12 +51,12 @@
                 @endphp
 
                 <div class="px-3 mb-3">
-                    <span class="text-[10px] uppercase tracking-widest text-indigo-300/50 font-semibold">Menu Utama</span>
+                    <span class="text-[10px] uppercase tracking-widest text-purple-300/50 font-semibold">Menu Utama</span>
                 </div>
 
                 @foreach($navItems as $item)
                     <a href="{{ route($item['route']) }}"
-                       class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 {{ request()->routeIs($item['route'] . '*') ? 'bg-white/15 text-white shadow-lg shadow-indigo-900/30' : 'text-indigo-200/70 hover:bg-white/5 hover:text-white' }}">
+                       class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 {{ request()->routeIs($item['route'] . '*') ? 'bg-white/15 text-white shadow-lg shadow-purple-900/30' : 'text-purple-200/70 hover:bg-white/5 hover:text-white' }}">
                         <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">{!! $item['icon'] !!}</svg>
                         {{ $item['name'] }}
                         @if(request()->routeIs($item['route'] . '*'))
@@ -66,7 +66,7 @@
                 @endforeach
 
                 <div class="px-3 mt-6 mb-3">
-                    <span class="text-[10px] uppercase tracking-widest text-indigo-300/50 font-semibold">Master Data</span>
+                    <span class="text-[10px] uppercase tracking-widest text-purple-300/50 font-semibold">Master Data</span>
                 </div>
 
                 @foreach([
@@ -74,7 +74,7 @@
                     ['route' => 'admin.pengarang.index', 'name' => 'Pengarang', 'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>'],
                 ] as $item)
                     <a href="{{ route($item['route']) }}"
-                       class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 {{ request()->routeIs($item['route'] . '*') ? 'bg-white/15 text-white shadow-lg shadow-indigo-900/30' : 'text-indigo-200/70 hover:bg-white/5 hover:text-white' }}">
+                       class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 {{ request()->routeIs($item['route'] . '*') ? 'bg-white/15 text-white shadow-lg shadow-purple-900/30' : 'text-purple-200/70 hover:bg-white/5 hover:text-white' }}">
                         <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">{!! $item['icon'] !!}</svg>
                         {{ $item['name'] }}
                         @if(request()->routeIs($item['route'] . '*'))
@@ -85,18 +85,18 @@
             </nav>
 
             {{-- User info --}}
-            <div class="p-4 border-t border-indigo-500/20">
+            <div class="p-4 border-t border-purple-500/20">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-amber-500/20">
                         {{ substr(auth()->user()->nama, 0, 1) }}
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-sm font-semibold text-white truncate">{{ auth()->user()->nama }}</p>
-                        <p class="text-xs text-indigo-300/50">Administrator</p>
+                        <p class="text-xs text-purple-300/50">Administrator</p>
                     </div>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="p-2 text-indigo-300/50 hover:text-white hover:bg-white/10 rounded-lg transition" title="Logout">
+                        <button type="submit" class="p-2 text-purple-300/50 hover:text-white hover:bg-white/10 rounded-lg transition" title="Logout">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
                         </button>
                     </form>

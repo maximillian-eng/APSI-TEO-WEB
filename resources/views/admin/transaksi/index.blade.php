@@ -8,7 +8,7 @@
         <div class="flex flex-col sm:flex-row gap-2 flex-1">
             <form method="GET" class="flex flex-1 gap-2">
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari anggota atau buku..."
-                       class="flex-1 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm">
+                       class="flex-1 rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 shadow-sm focus:border-purple-500 focus:ring-purple-500 text-sm">
                 <select name="status" class="rounded-lg border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 text-sm">
                     <option value="">Semua Status</option>
                     <option value="dipinjam" {{ request('status') === 'dipinjam' ? 'selected' : '' }}>Dipinjam</option>
@@ -49,7 +49,7 @@
                     </td>
                     <td class="px-6 py-4 text-right space-x-2">
                         @if($trx->status_peminjaman === 'dipinjam')
-                            <a href="{{ route('admin.transaksi.pengembalian', $trx) }}" class="text-blue-600 hover:text-blue-800 text-xs font-medium">Proses Pengembalian</a>
+                            <a href="{{ route('admin.transaksi.pengembalian', $trx) }}" class="text-purple-600 hover:text-purple-800 text-xs font-medium">Proses Pengembalian</a>
                         @endif
                         <a href="{{ route('admin.transaksi.show', $trx) }}" class="text-gray-600 hover:text-gray-800 text-xs">Detail</a>
                     </td>

@@ -47,7 +47,7 @@
 
             <div class="flex items-center justify-end mt-6 space-x-3">
                 <a href="{{ route('member.riwayat') }}" class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-600 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 text-sm">Batal</a>
-                <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-sm font-medium">Konfirmasi Pengembalian</button>
+                <button type="submit" class="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-sm font-medium">Konfirmasi Pengembalian</button>
             </div>
         </form>
     </div>

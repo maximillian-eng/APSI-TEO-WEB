@@ -43,7 +43,7 @@ class AdminTransaksiController extends Controller
     {
         $transaksi->load(['anggota', 'buku']);
 
-        $hariTelat = max(0, now()->diffInDays($transaksi->tanggal_jatuh_tempo, false));
+        $hariTelat = max(0, $transaksi->tanggal_jatuh_tempo->diffInDays(now(), false));
         $dendaKeterlambatan = $hariTelat * 1000;
 
         return view('admin.transaksi.pengembalian', compact('transaksi', 'hariTelat', 'dendaKeterlambatan'));
@@ -56,7 +56,7 @@ class AdminTransaksiController extends Controller
             'denda_kerusakan' => 'required|numeric|min:0',
         ]);
 
-        $hariTelat = max(0, now()->diffInDays($transaksi->tanggal_jatuh_tempo, false));
+        $hariTelat = max(0, $transaksi->tanggal_jatuh_tempo->diffInDays(now(), false));
         $dendaKeterlambatan = $hariTelat * 1000;
         $dendaKerusakan = match ($validated['kondisi_buku']) {
             'Bagus' => 0,

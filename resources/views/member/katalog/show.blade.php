@@ -6,7 +6,7 @@
 <div class="max-w-2xl mx-auto space-y-6">
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <div class="flex items-start justify-between mb-4">
-            <span class="px-3 py-1 text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 rounded-full">{{ $buku->kategori->nama_kategori }}</span>
+            <span class="px-3 py-1 text-sm font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200 rounded-full">{{ $buku->kategori->nama_kategori }}</span>
             @if($buku->stok_tersedia > 0)
                 <span class="px-3 py-1 text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full">Tersedia</span>
             @else
@@ -38,7 +38,7 @@
               x-data
               x-on:submit.prevent="if(confirm('Yakin ingin meminjam buku ini?')) $el.submit()">
             @csrf
-            <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-sm font-medium">
+            <button type="submit" class="px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-sm font-medium">
                 Pinjam Buku
             </button>
         </form>

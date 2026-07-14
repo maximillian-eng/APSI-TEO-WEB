@@ -43,7 +43,7 @@
                     </td>
                     <td class="px-6 py-4 text-right">
                         @if($trx->status_peminjaman === 'dipinjam')
-                            <a href="{{ route('member.pengembalian.form', $trx) }}" class="text-blue-600 hover:text-blue-800 text-xs font-medium">Kembalikan</a>
+                            <a href="{{ route('member.pengembalian.form', $trx) }}" class="text-emerald-600 hover:text-emerald-800 text-xs font-medium">Kembalikan</a>
                         @elseif($trx->pengembalian)
                             <span class="text-gray-500 text-xs">Denda: Rp {{ number_format($trx->pengembalian->total_denda, 0, ',', '.') }}</span>
                         @endif
