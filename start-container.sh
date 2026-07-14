@@ -2,7 +2,17 @@
 
 set -e
 
-echo "==> Clearing build-time caches (env vars not available at build time)..."
+echo "==> Environment check..."
+echo "DB_CONNECTION=${DB_CONNECTION:-not set}"
+echo "DB_HOST=${DB_HOST:-not set}"
+echo "APP_KEY is ${APP_KEY:+set}${APP_KEY:-not set}"
+
+if [ -z "$APP_KEY" ]; then
+  echo "==> APP_KEY not set, generating one..."
+  php artisan key:generate --force
+fi
+
+echo "==> Clearing build-time caches..."
 php artisan config:clear 2>/dev/null || true
 php artisan route:clear 2>/dev/null || true
 php artisan view:clear 2>/dev/null || true
