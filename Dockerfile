@@ -3,8 +3,8 @@ FROM php:8.4-cli
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpng-dev libonig-dev libxml2-dev libsqlite3-dev \
-    && docker-php-ext-install -j$(nproc) pdo_mysql mbstring exif pcntl bcmath gd \
+    libpng-dev libonig-dev libxml2-dev libsqlite3-dev libzip-dev unzip \
+    && docker-php-ext-install -j$(nproc) pdo_mysql mbstring exif pcntl bcmath gd zip \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
