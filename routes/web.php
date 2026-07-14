@@ -12,6 +12,8 @@ use App\Http\Controllers\Member\MemberPeminjamanController;
 use App\Http\Controllers\Member\MemberRiwayatController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/up', fn () => response()->json(['status' => 'ok']));
+
 Route::get('/', function () {
     if (auth()->check()) {
         return auth()->user()->isAdmin()
