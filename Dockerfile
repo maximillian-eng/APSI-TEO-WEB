@@ -9,10 +9,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY composer.json composer.lock ./
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --ignore-platform-reqs --no-dev --optimize-autoloader
-
 COPY . .
+
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --ignore-platform-reqs --no-dev --optimize-autoloader
 
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
