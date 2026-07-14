@@ -13,7 +13,8 @@ COPY . .
 
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --ignore-platform-reqs --no-dev --optimize-autoloader
 
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
+RUN mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8000
 
